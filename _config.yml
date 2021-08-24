@@ -94,7 +94,7 @@ search:
 ## Docs: https://hexo.io/docs/deployment.html
 deploy: #
   type: git #
-  repo: https://github.com/chajianyuan/chajianyuan.github.io.git
+  repo: git@github.com:chajianyuan/chajianyuan.github.io.git
   branch: master
 
 algolia:
