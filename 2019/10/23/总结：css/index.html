@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chajianyuan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"ZFO5FC3GGP","apiKey":"ebb197ff3f64dd809727fafc95ab1151","indexName":"test_NAME","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、css 选择器参见总结：css：css 选择器及优先级">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结：css">
+<meta property="og:url" content="https://chajianyuan.github.io/2019/10/23/%E6%80%BB%E7%BB%93%EF%BC%9Acss/index.html">
+<meta property="og:site_name" content="南殇的博客">
+<meta property="og:description" content="一、css 选择器参见总结：css：css 选择器及优先级">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-23T06:26:27.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:21:31.005Z">
+<meta property="article:author" content="chajianyuan">
+<meta property="article:tag" content="📝总结">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chajianyuan.github.io/2019/10/23/%E6%80%BB%E7%BB%93%EF%BC%9Acss/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>总结：css | 南殇的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="南殇的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">南殇的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Come on, baby 💪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chajianyuan.github.io/2019/10/23/%E6%80%BB%E7%BB%93%EF%BC%9Acss/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="chajianyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南殇的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          总结：css
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-23 14:26:27" itemprop="dateCreated datePublished" datetime="2019-10-23T14:26:27+08:00">2019-10-23</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-24 14:21:31" itemprop="dateModified" datetime="2021-08-24T14:21:31+08:00">2021-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>892</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、css-选择器"><a href="#一、css-选择器" class="headerlink" title="一、css 选择器"></a>一、css 选择器</h2><p><a href="https://chajianyuan.github.io/2019/10/19/css%EF%BC%9Acss%E9%80%89%E6%8B%A9%E5%99%A8%E5%8F%8A%E4%BC%98%E5%85%88%E7%BA%A7/">参见总结：css：css 选择器及优先级</a></p>
+<a id="more"></a>
+
+<h2 id="二、css-的引入方式"><a href="#二、css-的引入方式" class="headerlink" title="二、css 的引入方式"></a>二、css 的引入方式</h2><p><a href="">参见总结：css：css 的引入方式</a></p>
+<h2 id="三、浮动元素（Float）"><a href="#三、浮动元素（Float）" class="headerlink" title="三、浮动元素（Float）"></a>三、浮动元素（Float）</h2><p><a href="https://chajianyuan.github.io/2019/10/18/css%EF%BC%9Afloat%E5%92%8Cposition/">参见总结：css：float 和 position</a></p>
+<h2 id="四、定位属性（position）"><a href="#四、定位属性（position）" class="headerlink" title="四、定位属性（position）"></a>四、定位属性（position）</h2><p><a href="https://chajianyuan.github.io/2019/10/18/css%EF%BC%9Afloat%E5%92%8Cposition/">参见总结：css：float 和 position</a></p>
+<h2 id="五、css-元素哪些可以继承，哪些不可以"><a href="#五、css-元素哪些可以继承，哪些不可以" class="headerlink" title="五、css 元素哪些可以继承，哪些不可以"></a>五、css 元素哪些可以继承，哪些不可以</h2><p>可继承的样式：font-size、font-family、color</p>
+<p>不可继承的样式：border、padding、margin、width、height</p>
+<p><strong>与字体相关的样式通常可以继承，与尺寸相关的样式通常不能继承。</strong></p>
+<h2 id="六、为什么要初始化-css"><a href="#六、为什么要初始化-css" class="headerlink" title="六、为什么要初始化 css"></a>六、为什么要初始化 css</h2><p>因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没有初始化 css，往往会导致页面在不同浏览器之间出现差异</p>
+<p>当然，初始化样式有时会对 SEO 产生一定一影响，但鱼和熊掌不可兼得，所以在力求影响最小的情况下初始化 css</p>
+<p>最简单的初始化方法就是<code>*&#123;padding: 0; margin: 0&#125;</code></p>
+<h2 id="七、display-属性"><a href="#七、display-属性" class="headerlink" title="七、display 属性"></a>七、display 属性</h2><p><a target="_blank" rel="noopener" href="https://www.runoob.com/cssref/pr-class-display.html">菜鸟教程：CSS display 属性</a></p>
+<p>常用属性值</p>
+<table>
+<thead>
+<tr>
+<th>值</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>none</td>
+<td>此元素不会显示，已脱离文档流</td>
+</tr>
+<tr>
+<td>block</td>
+<td>块类型，默认宽度为父元素宽度，可设置宽高，换行显示</td>
+</tr>
+<tr>
+<td>inline</td>
+<td>行内元素类型，默认宽度为内容宽度，不可设置宽高，同行显示。</td>
+</tr>
+<tr>
+<td>inline-block</td>
+<td>行内块级元素类型，默认宽度为内容宽度，可以设置宽高，同行显示。</td>
+</tr>
+<tr>
+<td>list-item</td>
+<td>像块类型元素一样显示，并添加样式列表标记</td>
+</tr>
+<tr>
+<td>table</td>
+<td>此元素会作为块级表格显示</td>
+</tr>
+<tr>
+<td>inherit</td>
+<td>从父元素继承 display 属性的值</td>
+</tr>
+</tbody></table>
+<h2 id="八、行内元素、行内块级元素、块级元素"><a href="#八、行内元素、行内块级元素、块级元素" class="headerlink" title="八、行内元素、行内块级元素、块级元素"></a>八、行内元素、行内块级元素、块级元素</h2><p><a href="https://chajianyuan.github.io/2019/10/15/html%EF%BC%9A%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0/">参见总结：html：行内元素、行内块级元素、块级元素</a></p>
+<h2 id="九、盒模型"><a href="#九、盒模型" class="headerlink" title="九、盒模型"></a>九、盒模型</h2><p><a href="https://chajianyuan.github.io/2019/10/15/css%EF%BC%9A%E7%9B%92%E6%A8%A1%E5%9E%8B%E5%8F%8Abox-sizing/">参见总结：css：盒模型及 box-sizing</a></p>
+<h2 id="十、css-单位"><a href="#十、css-单位" class="headerlink" title="十、css 单位"></a>十、css 单位</h2><p><a href="https://chajianyuan.github.io/2019/10/17/css%EF%BC%9A%E5%85%83%E7%B4%A0%E5%8D%95%E4%BD%8D%E7%9A%84%E4%BD%BF%E7%94%A8/">参见总结：css：元素单位的使用</a></p>
+<h2 id="十一、css-常见布局"><a href="#十一、css-常见布局" class="headerlink" title="十一、css 常见布局"></a>十一、css 常见布局</h2><h3 id="1、水平居中、垂直居中、水平垂直居中"><a href="#1、水平居中、垂直居中、水平垂直居中" class="headerlink" title="1、水平居中、垂直居中、水平垂直居中"></a>1、水平居中、垂直居中、水平垂直居中</h3><p><a href="https://chajianyuan.github.io/2019/10/16/css%EF%BC%9A%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">参见总结：css：水平垂直居中</a></p>
+<h3 id="2、单列、两列、三列布局"><a href="#2、单列、两列、三列布局" class="headerlink" title="2、单列、两列、三列布局"></a>2、单列、两列、三列布局</h3><p><a href="https://chajianyuan.github.io/2019/10/27/css%EF%BC%9A%E5%8D%95%E5%88%97%E3%80%81%E4%B8%A4%E5%88%97%E3%80%81%E4%B8%89%E5%88%97%E5%B8%83%E5%B1%80/">参照总结：css：单列、两列、三列布局</a></p>
+<h2 id="十二、css3-新特性"><a href="#十二、css3-新特性" class="headerlink" title="十二、css3 新特性"></a>十二、css3 新特性</h2><p><a href="https://chajianyuan.github.io/2019/10/19/css%EF%BC%9Acss3%E5%B1%9E%E6%80%A7/">参见总结：css：css3 属性</a></p>
+<h2 id="十三、BFC-规范"><a href="#十三、BFC-规范" class="headerlink" title="十三、BFC 规范"></a>十三、BFC 规范</h2><p><a href="https://chajianyuan.github.io/2019/10/27/css%EF%BC%9ABFC%E8%A7%84%E8%8C%83/">参照总结：css：BFC 规范</a></p>
+<h2 id="十四、flex-布局"><a href="#十四、flex-布局" class="headerlink" title="十四、flex 布局"></a>十四、flex 布局</h2><p><a href="https://chajianyuan.github.io/2019/10/13/css%EF%BC%9Aflex%E5%B8%83%E5%B1%80/">参见总结：css：flex 布局</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%F0%9F%93%9D%E6%80%BB%E7%BB%93/" rel="tag"># 📝总结</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/20/JS%EF%BC%9A%E5%89%8D%E7%AB%AF%E6%A8%A1%E5%9D%97%E5%8C%96/" rel="prev" title="前端模块化">
+      <i class="fa fa-chevron-left"></i> 前端模块化
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/24/ES6%EF%BC%9A%E6%96%B0%E7%89%B9%E6%80%A7/" rel="next" title="ES6：新特性">
+      ES6：新特性 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  console.log(`%c                   ####                             K#####           ###W                   #        
+        ##Ef.     ####       f##         #################          ########################        
+        ########################         #################          ########################        
+        ########################         #########L   ####:         ########################        
+        ########################         ###E          ###t         ####       ###.                 
+           ####;  ####  :####            ###E   ####   ###f         #### ###  #########             
+          #####   ####   #####           ###E   ####   ###L         #### ################           
+         .####    ####    ####L          ###E   ####   ###L         ###W #################          
+         ####     ####     ####          ###E   ####   ###f         ###L ######:      ####          
+           #      EEE.     L#            ###E  i###    ###t         ###t ####          ###K         
+          ###################            ###E  ####    ###;         ###  ##################         
+          ####################           ###E  ####    ###          ###  #################W         
+          #########E     j####           ###E ####     ###          ###  #################L         
+          ####             ###           ###E ####     ###          ###  ####          ###t         
+          ####################t          ###E ###W    f###          ###  ####          ####         
+          ####################L          ###f#### ### ####          ###  ##################         
+          ####################L         W###.####,###              t###  ##################         
+          ####             ###i;            #### ####              W###  ##################         
+          #####################;           ##### ####              ####   #.    ####    D           
+          #####################;           ####  ####              ####   ###   ####  :##           
+          #####################           ####   ####              ####  ####   ####  ###E          
+       L  fff                            E####   ####       ##     #### f####   ####  ####          
+       ##########################        ####    ##### f#####f     #### ####    ####   ####         
+       ##########################       ####     .###########      ###L####t #######   ####         
+       ##########################      #####      ###########      ###  ###  ######,    ##E         
+         fGE################EEf          ##        .####E         ####        ####W          `, 'color: #8959a8');
+  console.log('%c 👏👏👏欢迎访问我的博客😊，还请多多指教！', 'color: #8959a8')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81css-%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">一、css 选择器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81css-%E7%9A%84%E5%BC%95%E5%85%A5%E6%96%B9%E5%BC%8F"><span class="nav-text">二、css 的引入方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%B5%AE%E5%8A%A8%E5%85%83%E7%B4%A0%EF%BC%88Float%EF%BC%89"><span class="nav-text">三、浮动元素（Float）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7%EF%BC%88position%EF%BC%89"><span class="nav-text">四、定位属性（position）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81css-%E5%85%83%E7%B4%A0%E5%93%AA%E4%BA%9B%E5%8F%AF%E4%BB%A5%E7%BB%A7%E6%89%BF%EF%BC%8C%E5%93%AA%E4%BA%9B%E4%B8%8D%E5%8F%AF%E4%BB%A5"><span class="nav-text">五、css 元素哪些可以继承，哪些不可以</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E4%B8%BA%E4%BB%80%E4%B9%88%E8%A6%81%E5%88%9D%E5%A7%8B%E5%8C%96-css"><span class="nav-text">六、为什么要初始化 css</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81display-%E5%B1%9E%E6%80%A7"><span class="nav-text">七、display 属性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0%E3%80%81%E8%A1%8C%E5%86%85%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="nav-text">八、行内元素、行内块级元素、块级元素</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81%E7%9B%92%E6%A8%A1%E5%9E%8B"><span class="nav-text">九、盒模型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81css-%E5%8D%95%E4%BD%8D"><span class="nav-text">十、css 单位</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%80%E3%80%81css-%E5%B8%B8%E8%A7%81%E5%B8%83%E5%B1%80"><span class="nav-text">十一、css 常见布局</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD%E3%80%81%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD%E3%80%81%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-text">1、水平居中、垂直居中、水平垂直居中</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%8D%95%E5%88%97%E3%80%81%E4%B8%A4%E5%88%97%E3%80%81%E4%B8%89%E5%88%97%E5%B8%83%E5%B1%80"><span class="nav-text">2、单列、两列、三列布局</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C%E3%80%81css3-%E6%96%B0%E7%89%B9%E6%80%A7"><span class="nav-text">十二、css3 新特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E4%B8%89%E3%80%81BFC-%E8%A7%84%E8%8C%83"><span class="nav-text">十三、BFC 规范</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E5%9B%9B%E3%80%81flex-%E5%B8%83%E5%B1%80"><span class="nav-text">十四、flex 布局</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">chajianyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chajianyuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : '7a15382c89efe3b20c953666bd5db263',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

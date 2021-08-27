@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chajianyuan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"ZFO5FC3GGP","apiKey":"ebb197ff3f64dd809727fafc95ab1151","indexName":"test_NAME","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、水平居中1、行内元素">
+<meta property="og:type" content="article">
+<meta property="og:title" content="css：水平垂直居中">
+<meta property="og:url" content="https://chajianyuan.github.io/2019/10/16/css%EF%BC%9A%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/index.html">
+<meta property="og:site_name" content="南殇的博客">
+<meta property="og:description" content="一、水平居中1、行内元素">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016123813.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016123813.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016124428.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016125427.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016131118.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016150151.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016150717.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016152131.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016153152.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016160059.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016160537.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016162740.png?raw=true">
+<meta property="article:published_time" content="2019-10-16T04:15:15.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:20:01.854Z">
+<meta property="article:author" content="chajianyuan">
+<meta property="article:tag" content="🌈css">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016123813.png?raw=true">
+
+<link rel="canonical" href="https://chajianyuan.github.io/2019/10/16/css%EF%BC%9A%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>css：水平垂直居中 | 南殇的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="南殇的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">南殇的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Come on, baby 💪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chajianyuan.github.io/2019/10/16/css%EF%BC%9A%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="chajianyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南殇的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          css：水平垂直居中
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-16 12:15:15" itemprop="dateCreated datePublished" datetime="2019-10-16T12:15:15+08:00">2019-10-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-24 14:20:01" itemprop="dateModified" datetime="2021-08-24T14:20:01+08:00">2021-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>5.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、水平居中"><a href="#一、水平居中" class="headerlink" title="一、水平居中"></a>一、水平居中</h2><h3 id="1、行内元素"><a href="#1、行内元素" class="headerlink" title="1、行内元素"></a>1、行内元素</h3><a id="more"></a>
+
+<h4 id="（1）父元素是块级元素"><a href="#（1）父元素是块级元素" class="headerlink" title="（1）父元素是块级元素"></a>（1）父元素是块级元素</h4><p>父元素设置<code>text-align: center</code></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div <span class="class"><span class="keyword">class</span>=&quot;<span class="title">one</span>&quot;&gt;</span></span><br><span class="line"><span class="class">	&lt;span&gt;我是行内元素&lt;/span&gt;</span></span><br><span class="line"><span class="class">&lt;/div&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">.<span class="title">one</span> &#123;</span></span><br><span class="line">	<span class="built_in">width</span>: <span class="number">200</span>px;</span><br><span class="line">	<span class="built_in">height</span>: <span class="number">100</span>px;</span><br><span class="line">	border: solid <span class="number">1</span>px red;</span><br><span class="line">	<span class="built_in">text</span>-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016123813.png?raw=true"></p>
+<h4 id="（2）父元素不是块级元素"><a href="#（2）父元素不是块级元素" class="headerlink" title="（2）父元素不是块级元素"></a>（2）父元素不是块级元素</h4><p>先将父元素设置为块级元素，再将父元素设置<code>text-align: center</code></p>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;span <span class="class"><span class="keyword">class</span>=&quot;<span class="title">one</span>&quot;&gt;</span></span><br><span class="line"><span class="class">	&lt;span&gt;我是行内元素&lt;/span&gt;</span></span><br><span class="line"><span class="class">&lt;/span&gt;</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">.<span class="title">one</span> &#123;</span></span><br><span class="line">	<span class="built_in">width</span>: <span class="number">200</span>px;</span><br><span class="line">	<span class="built_in">height</span>: <span class="number">100</span>px;</span><br><span class="line">	border: solid <span class="number">1</span>px red;</span><br><span class="line">	<span class="built_in">display</span>: block;</span><br><span class="line">	<span class="built_in">text</span>-align: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016123813.png?raw=true"></p>
+<h3 id="2、块级元素"><a href="#2、块级元素" class="headerlink" title="2、块级元素"></a>2、块级元素</h3><h4 id="（1）定宽度"><a href="#（1）定宽度" class="headerlink" title="（1）定宽度"></a>（1）定宽度</h4><p><code>margin: 0 auto;</code></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;main&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">		我是有宽度的块级元素</span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">main </span>&#123;</span><br><span class="line"><span class="symbol">	width:</span> <span class="number">500</span>px;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">300</span>px;</span><br><span class="line"><span class="symbol">	border:</span> solid <span class="number">1</span>px red;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	width:</span> <span class="number">200</span>px;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">100</span>px;</span><br><span class="line"><span class="symbol">	margin:</span> <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016124428.png?raw=true"></p>
+<h4 id="（2）不定宽度"><a href="#（2）不定宽度" class="headerlink" title="（2）不定宽度"></a>（2）不定宽度</h4><ol>
+<li>设置子元素<code>display: inline</code> 或<code>display: inline-block</code>;</li>
+<li>给父元素设置<code>text-align: center</code></li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是没有宽度的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">text-align</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">display</span>: inline;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016125427.png?raw=true"></p>
+<h4 id="（3）使用定位属性"><a href="#（3）使用定位属性" class="headerlink" title="（3）使用定位属性"></a>（3）使用定位属性</h4><ol>
+<li>设置父元素为相对定位；</li>
+<li>子元素为绝对定位，</li>
+<li>设置子元素的 left:50%，即让子元素的左上角水平居中</li>
+</ol>
+<h5 id="（a）-定宽度"><a href="#（a）-定宽度" class="headerlink" title="（a） 定宽度"></a>（a） 定宽度</h5><p>设置绝对子元素的<code>margin-left: -子元素宽度的一半px</code> ；或者设置<code>transform: translateX(-50%)</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用定位属性有宽度的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">left</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">200px</span>;</span><br><span class="line">	<span class="attribute">margin-left</span>: -<span class="number">100px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016131118.png?raw=true"></p>
+<h5 id="（b）不定宽度"><a href="#（b）不定宽度" class="headerlink" title="（b）不定宽度"></a>（b）不定宽度</h5><p>利用 css 新增属性<code>transform: translateX(-50%)</code></p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;main&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">		我是使用定位属性没有宽度的块级元素</span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">main </span>&#123;</span><br><span class="line"><span class="symbol">	width:</span> <span class="number">500</span>px;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">300</span>px;</span><br><span class="line"><span class="symbol">	border:</span> solid <span class="number">1</span>px red;</span><br><span class="line"><span class="symbol">	position:</span> relative;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> absolute;</span><br><span class="line"><span class="symbol">	left:</span> <span class="number">50</span>%;</span><br><span class="line"><span class="symbol">	width:</span> <span class="number">200</span>px;</span><br><span class="line"><span class="symbol">	transform:</span> translateX(<span class="number">-50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016150151.png?raw=true"></p>
+<h4 id="（4）flex-justify-content"><a href="#（4）flex-justify-content" class="headerlink" title="（4）flex + justify-content"></a>（4）flex + justify-content</h4><p>利用 flexbox，只需要给待处理的块状元素的父元素添加属性<code>dispaly: flex;justify-content: center;</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用<span class="attribute">flex</span>布局的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">justify-content</span>: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016150717.png?raw=true"></p>
+<h4 id="（5）flex-margin"><a href="#（5）flex-margin" class="headerlink" title="（5）flex + margin"></a>（5）flex + margin</h4><p>父元素设置为 flex 布局，子元素只用 margin 居中。</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用<span class="attribute">flex</span>布局的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">margin</span>: <span class="number">0</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="二、垂直居中"><a href="#二、垂直居中" class="headerlink" title="二、垂直居中"></a>二、垂直居中</h2><h3 id="1、单行的行内元素"><a href="#1、单行的行内元素" class="headerlink" title="1、单行的行内元素"></a>1、单行的行内元素</h3><p>只需要设置单行行内元素的行高 = 盒子高度即可</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">span</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是单行行内元素</span><br><span class="line">	&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">line-height</span>: <span class="number">300px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016152131.png?raw=true"></p>
+<h3 id="2、多行的行内元素"><a href="#2、多行的行内元素" class="headerlink" title="2、多行的行内元素"></a>2、多行的行内元素</h3><p>给父元素设置<code>display: table-cell</code> 和<code>vertical-align:middle</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">span</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素我是多行行内元素</span><br><span class="line">	&lt;/span&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: table-cell;</span><br><span class="line">	<span class="attribute">vertical-align</span>: middle;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016153152.png?raw=true"></p>
+<h3 id="3、块级元素"><a href="#3、块级元素" class="headerlink" title="3、块级元素"></a>3、块级元素</h3><h4 id="（1）使用定位属性"><a href="#（1）使用定位属性" class="headerlink" title="（1）使用定位属性"></a>（1）使用定位属性</h4><ol>
+<li>设置父元素为相对定位</li>
+<li>设置子元素为绝对定位</li>
+<li>设置子元素的<code>top:50%</code> ，即让子元素在左上角垂直居中</li>
+</ol>
+<h5 id="（a）定高度"><a href="#（a）定高度" class="headerlink" title="（a）定高度"></a>（a）定高度</h5><p>设置绝对子元素的<code>margin-top:-子元素高度的一半px</code> ；或者设置<code>translateY(-50%)</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用定位属性有高度的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"></span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: table-cell;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">margin-top</span>: -<span class="number">50px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016160059.png?raw=true"></p>
+<h5 id="（b）不定高度"><a href="#（b）不定高度" class="headerlink" title="（b）不定高度"></a>（b）不定高度</h5><p>使用 css3 新增属性<code>transform:translateY(-50%)</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用定位属性没有高度的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: table-cell;</span><br><span class="line">	<span class="attribute">position</span>: relative;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">position</span>: absolute;</span><br><span class="line">	<span class="attribute">top</span>: <span class="number">50%</span>;</span><br><span class="line">	<span class="attribute">transform</span>: translateY(-<span class="number">50%</span>);</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016160537.png?raw=true"></p>
+<h4 id="（2）使用-flex-布局"><a href="#（2）使用-flex-布局" class="headerlink" title="（2）使用 flex 布局"></a>（2）使用 flex 布局</h4><p>使用 flexbox 布局，只需要给待处理的块状元素的父元素添加属性<code>display:flex; align-items:center;</code></p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;main&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="selector-tag">div</span> class=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">		我是使用<span class="attribute">flex</span>布局的块级元素</span><br><span class="line">	&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line"><span class="selector-class">.main</span> &#123;</span><br><span class="line">	<span class="attribute">width</span>: <span class="number">500px</span>;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">300px</span>;</span><br><span class="line">	<span class="attribute">border</span>: solid <span class="number">1px</span> red;</span><br><span class="line">	<span class="attribute">display</span>: flex;</span><br><span class="line">	<span class="attribute">align-items</span>: center;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.one</span> &#123;</span><br><span class="line">	<span class="attribute">height</span>: <span class="number">100px</span>;</span><br><span class="line">	<span class="attribute">background-color</span>: green;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720191016162740.png?raw=true"></p>
+<h2 id="三、水平垂直居中"><a href="#三、水平垂直居中" class="headerlink" title="三、水平垂直居中"></a>三、水平垂直居中</h2><h3 id="1、绝对定位与负边距"><a href="#1、绝对定位与负边距" class="headerlink" title="1、绝对定位与负边距"></a>1、绝对定位与负边距</h3><p>子元素有宽度高度</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;two&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> relative;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">two </span>&#123;</span><br><span class="line"><span class="symbol">	width:</span> <span class="number">100</span>px;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">100</span>px;</span><br><span class="line"><span class="symbol">	position:</span> absolute;</span><br><span class="line"><span class="symbol">	top:</span> <span class="number">50</span>%;</span><br><span class="line"><span class="symbol">	left:</span> <span class="number">50</span>%;</span><br><span class="line"><span class="symbol">	margin:</span> <span class="number">-50</span>px <span class="number">0</span> <span class="number">0</span> <span class="number">-50</span>px;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="2、绝对定位与-margin-auto"><a href="#2、绝对定位与-margin-auto" class="headerlink" title="2、绝对定位与 margin: auto"></a>2、绝对定位与 margin: auto</h3><p>父元素必须有高度</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;two&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> relative;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">100</span>px;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">two </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> absolute;</span><br><span class="line"><span class="symbol">	top:</span> <span class="number">0</span>;</span><br><span class="line"><span class="symbol">	left:</span> <span class="number">0</span>;</span><br><span class="line"><span class="symbol">	right:</span> <span class="number">0</span>;</span><br><span class="line"><span class="symbol">	bottom:</span> <span class="number">0</span>;</span><br><span class="line"><span class="symbol">	margin:</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、绝对定位-css3"><a href="#3、绝对定位-css3" class="headerlink" title="3、绝对定位+css3"></a>3、绝对定位+css3</h3><p>不知道子元素的宽高</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;two&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> relative;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">two </span>&#123;</span><br><span class="line"><span class="symbol">	position:</span> absolute;</span><br><span class="line"><span class="symbol">	top:</span> <span class="number">50</span>%;</span><br><span class="line"><span class="symbol">	left:</span> <span class="number">50</span>%;</span><br><span class="line"><span class="symbol">	transform:</span> translate(<span class="number">-50</span>%, <span class="number">-50</span>%);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="4、flex-布局"><a href="#4、flex-布局" class="headerlink" title="4、flex 布局"></a>4、flex 布局</h3><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">&quot;one&quot;</span>&gt;</span><br><span class="line">	&lt;<span class="keyword">div</span> <span class="built_in">class</span>=<span class="string">&quot;two&quot;</span>&gt;</span><br><span class="line">	&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line">&lt;/<span class="keyword">div</span>&gt;</span><br><span class="line"></span><br><span class="line">.one &#123;</span><br><span class="line">	display: flex;</span><br><span class="line">	justify-content: center;</span><br><span class="line">	align-items: center;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5、flex-grid-与-margin-auto"><a href="#5、flex-grid-与-margin-auto" class="headerlink" title="5、flex/grid 与 margin: auto"></a>5、flex/grid 与 margin: auto</h3><p>父元素必须有高度</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;div class=&quot;one&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;div class=&quot;two&quot;&gt;</span></span><br><span class="line">	<span class="params">&lt;/div&gt;</span></span><br><span class="line"><span class="params">&lt;/div&gt;</span></span><br><span class="line"></span><br><span class="line">.<span class="class">one </span>&#123;</span><br><span class="line"><span class="symbol">	height:</span> <span class="number">100</span>px;</span><br><span class="line"><span class="symbol">	display:</span> grid / flex;</span><br><span class="line">&#125;</span><br><span class="line">.<span class="class">two </span>&#123;</span><br><span class="line"><span class="symbol">	margin:</span> auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://juejin.im/post/5bc3eb8bf265da0a8a6ad1ce">如何居中一个元素（终结版）</a></p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%F0%9F%8C%88css/" rel="tag"># 🌈css</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/15/css%EF%BC%9A%E7%9B%92%E6%A8%A1%E5%9E%8B%E5%8F%8Abox-sizing/" rel="prev" title="css：盒模型及box-sizing">
+      <i class="fa fa-chevron-left"></i> css：盒模型及box-sizing
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/16/JS%EF%BC%9A%E9%9A%90%E8%97%8F%E9%A1%B5%E9%9D%A2%E5%85%83%E7%B4%A0/" rel="next" title="JS:隐藏页面元素">
+      JS:隐藏页面元素 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  console.log(`%c                   ####                             K#####           ###W                   #        
+        ##Ef.     ####       f##         #################          ########################        
+        ########################         #################          ########################        
+        ########################         #########L   ####:         ########################        
+        ########################         ###E          ###t         ####       ###.                 
+           ####;  ####  :####            ###E   ####   ###f         #### ###  #########             
+          #####   ####   #####           ###E   ####   ###L         #### ################           
+         .####    ####    ####L          ###E   ####   ###L         ###W #################          
+         ####     ####     ####          ###E   ####   ###f         ###L ######:      ####          
+           #      EEE.     L#            ###E  i###    ###t         ###t ####          ###K         
+          ###################            ###E  ####    ###;         ###  ##################         
+          ####################           ###E  ####    ###          ###  #################W         
+          #########E     j####           ###E ####     ###          ###  #################L         
+          ####             ###           ###E ####     ###          ###  ####          ###t         
+          ####################t          ###E ###W    f###          ###  ####          ####         
+          ####################L          ###f#### ### ####          ###  ##################         
+          ####################L         W###.####,###              t###  ##################         
+          ####             ###i;            #### ####              W###  ##################         
+          #####################;           ##### ####              ####   #.    ####    D           
+          #####################;           ####  ####              ####   ###   ####  :##           
+          #####################           ####   ####              ####  ####   ####  ###E          
+       L  fff                            E####   ####       ##     #### f####   ####  ####          
+       ##########################        ####    ##### f#####f     #### ####    ####   ####         
+       ##########################       ####     .###########      ###L####t #######   ####         
+       ##########################      #####      ###########      ###  ###  ######,    ##E         
+         fGE################EEf          ##        .####E         ####        ####W          `, 'color: #8959a8');
+  console.log('%c 👏👏👏欢迎访问我的博客😊，还请多多指教！', 'color: #8959a8')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81%E6%B0%B4%E5%B9%B3%E5%B1%85%E4%B8%AD"><span class="nav-text">一、水平居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-text">1、行内元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E7%88%B6%E5%85%83%E7%B4%A0%E6%98%AF%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="nav-text">（1）父元素是块级元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E7%88%B6%E5%85%83%E7%B4%A0%E4%B8%8D%E6%98%AF%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="nav-text">（2）父元素不是块级元素</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="nav-text">2、块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E5%AE%9A%E5%AE%BD%E5%BA%A6"><span class="nav-text">（1）定宽度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%B8%8D%E5%AE%9A%E5%AE%BD%E5%BA%A6"><span class="nav-text">（2）不定宽度</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%883%EF%BC%89%E4%BD%BF%E7%94%A8%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7"><span class="nav-text">（3）使用定位属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%88a%EF%BC%89-%E5%AE%9A%E5%AE%BD%E5%BA%A6"><span class="nav-text">（a） 定宽度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%88b%EF%BC%89%E4%B8%8D%E5%AE%9A%E5%AE%BD%E5%BA%A6"><span class="nav-text">（b）不定宽度</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%884%EF%BC%89flex-justify-content"><span class="nav-text">（4）flex + justify-content</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%885%EF%BC%89flex-margin"><span class="nav-text">（5）flex + margin</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-text">二、垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%8D%95%E8%A1%8C%E7%9A%84%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-text">1、单行的行内元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E5%A4%9A%E8%A1%8C%E7%9A%84%E8%A1%8C%E5%86%85%E5%85%83%E7%B4%A0"><span class="nav-text">2、多行的行内元素</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E5%9D%97%E7%BA%A7%E5%85%83%E7%B4%A0"><span class="nav-text">3、块级元素</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%881%EF%BC%89%E4%BD%BF%E7%94%A8%E5%AE%9A%E4%BD%8D%E5%B1%9E%E6%80%A7"><span class="nav-text">（1）使用定位属性</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%88a%EF%BC%89%E5%AE%9A%E9%AB%98%E5%BA%A6"><span class="nav-text">（a）定高度</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%EF%BC%88b%EF%BC%89%E4%B8%8D%E5%AE%9A%E9%AB%98%E5%BA%A6"><span class="nav-text">（b）不定高度</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%EF%BC%882%EF%BC%89%E4%BD%BF%E7%94%A8-flex-%E5%B8%83%E5%B1%80"><span class="nav-text">（2）使用 flex 布局</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E6%B0%B4%E5%B9%B3%E5%9E%82%E7%9B%B4%E5%B1%85%E4%B8%AD"><span class="nav-text">三、水平垂直居中</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E4%B8%8E%E8%B4%9F%E8%BE%B9%E8%B7%9D"><span class="nav-text">1、绝对定位与负边距</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D%E4%B8%8E-margin-auto"><span class="nav-text">2、绝对定位与 margin: auto</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E7%BB%9D%E5%AF%B9%E5%AE%9A%E4%BD%8D-css3"><span class="nav-text">3、绝对定位+css3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81flex-%E5%B8%83%E5%B1%80"><span class="nav-text">4、flex 布局</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81flex-grid-%E4%B8%8E-margin-auto"><span class="nav-text">5、flex&#x2F;grid 与 margin: auto</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">chajianyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chajianyuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : 'cc9ba04bfd089f5c2e861fd310bb92ab',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

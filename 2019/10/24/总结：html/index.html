@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chajianyuan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"ZFO5FC3GGP","apiKey":"ebb197ff3f64dd809727fafc95ab1151","indexName":"test_NAME","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、HTML 语义化1、含义语义化的含义就是用正确的标签做正确的事情">
+<meta property="og:type" content="article">
+<meta property="og:title" content="总结：html">
+<meta property="og:url" content="https://chajianyuan.github.io/2019/10/24/%E6%80%BB%E7%BB%93%EF%BC%9Ahtml/index.html">
+<meta property="og:site_name" content="南殇的博客">
+<meta property="og:description" content="一、HTML 语义化1、含义语义化的含义就是用正确的标签做正确的事情">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-10-24T13:13:21.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:21:31.006Z">
+<meta property="article:author" content="chajianyuan">
+<meta property="article:tag" content="📝总结">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://chajianyuan.github.io/2019/10/24/%E6%80%BB%E7%BB%93%EF%BC%9Ahtml/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>总结：html | 南殇的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="南殇的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">南殇的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Come on, baby 💪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chajianyuan.github.io/2019/10/24/%E6%80%BB%E7%BB%93%EF%BC%9Ahtml/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="chajianyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南殇的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          总结：html
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-10-24 21:13:21" itemprop="dateCreated datePublished" datetime="2019-10-24T21:13:21+08:00">2019-10-24</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-24 14:21:31" itemprop="dateModified" datetime="2021-08-24T14:21:31+08:00">2021-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.3k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<h2 id="一、HTML-语义化"><a href="#一、HTML-语义化" class="headerlink" title="一、HTML 语义化"></a>一、HTML 语义化</h2><h3 id="1、含义"><a href="#1、含义" class="headerlink" title="1、含义"></a>1、含义</h3><p>语义化的含义就是用正确的标签做正确的事情</p>
+<a id="more"></a>
+
+<h3 id="2、优势"><a href="#2、优势" class="headerlink" title="2、优势"></a>2、优势</h3><p>（1）便于对浏览器、搜索引擎解析</p>
+<p>（2）便于盲人浏览网页</p>
+<p>（3）便于阅读源代码的人对网站进行分开，维护和理解</p>
+<h3 id="3、有哪些语义化的标签"><a href="#3、有哪些语义化的标签" class="headerlink" title="3、有哪些语义化的标签"></a>3、有哪些语义化的标签</h3><p>&lt; h1 &gt; - &lt; h6 &gt;、&lt; p &gt;、&lt; ul &gt;、&lt; ol &gt;、&lt; li&gt;、&lt; dl&gt;、&lt; dt&gt;、&lt; dd&gt;、&lt; em&gt;、&lt; strong&gt;、&lt; em&gt;、&lt; table&gt;、&lt; thead&gt;、&lt; tbody&gt;、&lt; td&gt;、&lt; th&gt;、&lt; caption&gt;等</p>
+<h2 id="二、HTML5-新标签"><a href="#二、HTML5-新标签" class="headerlink" title="二、HTML5 新标签"></a>二、HTML5 新标签</h2><ul>
+<li><code>header元素</code>：header 元素代表“网页”或“section”的页眉。</li>
+<li><code>footer元素</code>：footer 元素代表“网页”或“section”的页脚，通常含有该节的一些基本信息，譬如：作者，相关文档链接，版权资料。</li>
+<li><code>hgroup元素</code>：</li>
+<li><code>nav元素</code>：nav 元素代表页面的导航链接区域。用于定义页面的主要导航部分。</li>
+<li><code>aside元素</code>：aside 元素被包含在 article 元素中作为主要内容的附属信息部分，其中的内容可以是与当前文章有关的相关资料、标签、名次解释等。（特殊的 section）</li>
+<li><code>section元素</code>：section 元素代表文档中的“节”或“段”，“段”可以是指一篇文章里按照主题的分段；“节”可以是指一个页面里的分组。section 通常还带标题，虽然 html5 中 section 会自动给标题 h1-h6 降级，但是最好手动给他们降级。</li>
+<li><code>article元素</code>：article 元素最容易跟 section 和 div 容易混淆，其实 article 代表一个在文档，页面或者网站中自成一体的内容，其目的是为了让开发者独立开发或重用。譬如论坛的帖子，博客上的文章，一篇用户的评论，一个互动的 widget 小工具。（特殊的 section）除了它的内容，article 会有一个标题（通常会在 header 里），会有一个 footer 页脚。</li>
+</ul>
+<h2 id="三、常见浏览器及其内核"><a href="#三、常见浏览器及其内核" class="headerlink" title="三、常见浏览器及其内核"></a>三、常见浏览器及其内核</h2><table>
+<thead>
+<tr>
+<th align="center"></th>
+<th align="center">Chrome</th>
+<th align="center">Firefox</th>
+<th align="center">Safari</th>
+<th align="center">IE</th>
+<th align="center">Opera</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="center">内核</td>
+<td align="center">Blink</td>
+<td align="center">Gecko</td>
+<td align="center">Webkit</td>
+<td align="center">Trident</td>
+<td align="center">Bink</td>
+</tr>
+</tbody></table>
+<h2 id="四、-lt-script-gt-和-lt-link-gt-或者是-src-和-href-的区别"><a href="#四、-lt-script-gt-和-lt-link-gt-或者是-src-和-href-的区别" class="headerlink" title="四、 &lt; script &gt;和&lt; link &gt;或者是 src 和 href 的区别"></a>四、 &lt; script &gt;和&lt; link &gt;或者是 src 和 href 的区别</h2><ol>
+<li>src 表示来源地址，用在 img、script、iframe 等元素上；</li>
+<li>href 表示超文本引用，用在 link、a 等元素上；</li>
+<li>src 的内容是页面必不可少的一部分，表示引入；而 href 的的内容与该页面有关联，表示引用；</li>
+<li>src 用于替代这个元素，而 href 用于建立这个标签与外部资源之间的关系。</li>
+</ol>
+<h2 id="五、-lt-head-gt-中都有什么元素"><a href="#五、-lt-head-gt-中都有什么元素" class="headerlink" title="五、&lt; head &gt;中都有什么元素"></a>五、&lt; head &gt;中都有什么元素</h2><h3 id="1、-lt-base-gt"><a href="#1、-lt-base-gt" class="headerlink" title="1、&lt; base &gt;"></a>1、&lt; base &gt;</h3><p>为页面上的所有链接规定默认地址或默认目标</p>
+<p>通常情况下，浏览器会从当前文档的 URL 中提取相应的元素来填写相对 URL 中的空白。</p>
+<p>使用 &lt; base &gt; 标签可以改变这一点。浏览器随后将不再使用当前文档的 URL，而使用指定的基本 URL 来解析所有的相对 URL。这其中包括 &lt; a &gt;、&lt; img &gt;、&lt; link &gt;、&lt; form &gt; 标签中的 URL。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">href</span>=<span class="string">&quot;http://www.w3school.com.cn/i/&quot;</span> /&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">base</span> <span class="attr">target</span>=<span class="string">&quot;_blank&quot;</span> /&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="2、-lt-link-gt"><a href="#2、-lt-link-gt" class="headerlink" title="2、&lt; link &gt;"></a>2、&lt; link &gt;</h3><p>定义文档与外部资源的关系，最常见的就是链接样式表。</p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link <span class="attribute">rel</span>=<span class="string">&quot;stylesheet&quot;</span> <span class="attribute">type</span>=<span class="string">&quot;text/css&quot;</span> <span class="attribute">href</span>=<span class="string">&quot;theme.css&quot;</span> /&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3、-lt-script-gt"><a href="#3、-lt-script-gt" class="headerlink" title="3、&lt; script &gt;"></a>3、&lt; script &gt;</h3><p>用于定义用户脚本，比如 JavaScript。script 元素既可以包含脚本语言，也可以通过 src 属性指向外部脚本文件。必须的 type 属性规定脚本的 MIME 类型</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;text/javascript&quot;</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="built_in">document</span>.write(<span class="string">&quot;Hello World!&quot;</span>)</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="4、-lt-meta-gt"><a href="#4、-lt-meta-gt" class="headerlink" title="4、&lt; meta &gt;"></a>4、&lt; meta &gt;</h3><p>可提供有关页面的元信息，比如针对搜索引擎和更新频度的描述和关键词。定义了与文档相关联的名称/值对。</p>
+<p><code>&lt;meta name=&quot;keywords&quot; content=&quot;HTML,ASP,PHP,SQL&quot;&gt;</code></p>
+<h3 id="5、-lt-style-gt"><a href="#5、-lt-style-gt" class="headerlink" title="5、&lt; style &gt;"></a>5、&lt; style &gt;</h3><p>用于为 html 文档定义样式信息。type 属性是必须的，定义 style 元素的内容，唯一可能的值是“text/css”</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">&quot;text/css&quot;</span>&gt;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">h1</span> &#123;<span class="attribute">color</span>:red&#125;</span></span><br><span class="line"><span class="css">	<span class="selector-tag">p</span> &#123;<span class="attribute">color</span>:blue&#125;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="6、-lt-title-gt"><a href="#6、-lt-title-gt" class="headerlink" title="6、&lt; title &gt;"></a>6、&lt; title &gt;</h3><p>定义文档的标题，通常是现实在浏览器窗口的标题栏或者是状态栏上。</p>
+<figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;title&gt;</span>XHTML <span class="keyword">Tag</span> <span class="title">Reference</span><span class="tag">&lt;/title&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="六、本地存储"><a href="#六、本地存储" class="headerlink" title="六、本地存储"></a>六、本地存储</h2><p><a href="https://chajianyuan.github.io/2019/10/26/cookie%E3%80%81sessionStorage%E3%80%81localStorage%E8%AF%A6%E7%BB%86%E8%AE%B2%E8%A7%A3/">参见总结：cookie、session、sessionStorage、localStorage</a></p>
+<h2 id="七、websocket"><a href="#七、websocket" class="headerlink" title="七、websocket"></a>七、websocket</h2><p><a href="https://chajianyuan.github.io/2019/10/26/webSocket%E5%AD%A6%E4%B9%A0/">参见总结：webSocket 学习</a></p>
+<h2 id="八、W3C-标准"><a href="#八、W3C-标准" class="headerlink" title="八、W3C 标准"></a>八、W3C 标准</h2><p>w3c 标准不是某一个标准，而是一系列标准的集合，网页主要由三部分组成：结构（structure）、表现（Presentation）、行为（behavior）</p>
+<h3 id="1、结构标准语言"><a href="#1、结构标准语言" class="headerlink" title="1、结构标准语言"></a>1、结构标准语言</h3><h4 id="1-1-可扩展标记语言（XML）"><a href="#1-1-可扩展标记语言（XML）" class="headerlink" title="1.1 可扩展标记语言（XML）"></a>1.1 可扩展标记语言（XML）</h4><p>和 HTML 一样，XML 同样来源于标准通用标记语言，可扩展标记语言和标准通用标记语言都是能定义其他语言的语言。XML 最初设计的目的是弥补 HTML 的不足，以强大的扩展性满足网络信息发布的需要，后来逐渐用于网络数据的转换和描述。</p>
+<h4 id="1-2-可扩展超文本标记语言（XHTML）"><a href="#1-2-可扩展超文本标记语言（XHTML）" class="headerlink" title="1.2 可扩展超文本标记语言（XHTML）"></a>1.2 可扩展超文本标记语言（XHTML）</h4><p><strong>HTML 和 XHTML 的共同点</strong></p>
+<ul>
+<li>所有的标记都必须有一个对应的结束标记</li>
+<li>所有的标签的元素和属性的名字都必须使用小写</li>
+<li>所有的 XML 标记都必须合理嵌套</li>
+<li>所有的属性都必须用“ ”引起来</li>
+<li>所有的“&lt;”和“&amp;”特殊符号都用编码表示</li>
+<li>给所有属性赋一个值</li>
+<li>不要在注释内容中使用“–”</li>
+<li>图片必须有说明文字</li>
+</ul>
+<p><strong>HTML 和 XHTML 的区别</strong></p>
+<ul>
+<li>HTML 是一种基于 web 网页的设计语言，XHTML 是一种基于 XML、语法严格、标准的设计语言</li>
+<li>XHTML 元素必须正确的嵌套，元素必须关闭，标签必须小写，必须有根元素；HTML 没有这些限制</li>
+</ul>
+<h3 id="2、表现标准语言"><a href="#2、表现标准语言" class="headerlink" title="2、表现标准语言"></a>2、表现标准语言</h3><h4 id="2-1-层叠样式表（css）"><a href="#2-1-层叠样式表（css）" class="headerlink" title="2.1 层叠样式表（css）"></a>2.1 层叠样式表（css）</h4><p>万维网联盟创建 CSS 标准的目的是以 CSS 取代 HTML 表格式布局、帧和其他表现的语言。纯 CSS 布局与结构式 XHTML 相结合能帮助设计师分离外观与结构，使站点的访问及维护更加容易。</p>
+<h3 id="3、行为标准"><a href="#3、行为标准" class="headerlink" title="3、行为标准"></a>3、行为标准</h3><h4 id="3-1-文档对象模型（DOM）"><a href="#3-1-文档对象模型（DOM）" class="headerlink" title="3.1 文档对象模型（DOM）"></a>3.1 文档对象模型（DOM）</h4><p>根据 W3C DOM 规范，DOM 是一种与浏览器，平台，语言的接口，使得你可以访问页面其他的标准组件。简单理解，DOM 解决了 Netscaped 的 Javascript 和 Microsoft 的 Jscript 之间的冲突，给予 web 设计师和开发者一个标准的方法，让他们来访问他们站点中的数据、脚本和表现层对象。</p>
+<h4 id="3-2-ECMAScript"><a href="#3-2-ECMAScript" class="headerlink" title="3.2 ECMAScript"></a>3.2 ECMAScript</h4><p>ECMAScript 是 ECMA(European Computer Manufacturers Association)制定的标准脚本语言（JAVAScript）。</p>
+<h2 id="九、img-标签上的-title-和-alt-属性的区别"><a href="#九、img-标签上的-title-和-alt-属性的区别" class="headerlink" title="九、img 标签上的 title 和 alt 属性的区别"></a>九、img 标签上的 title 和 alt 属性的区别</h2><ul>
+<li>title 的功能是为元素提供标题信息，即当光标悬浮在标签上后显示的信息</li>
+<li>alt 的功能是图片的替换文案，即当图片不能正常显示的时（如加载失败），用文字代替</li>
+</ul>
+<h2 id="十、空元素"><a href="#十、空元素" class="headerlink" title="十、空元素"></a>十、空元素</h2><p>空元素也就是单标签元素：&lt; br &gt;、&lt; hr &gt;、&lt; img &gt;、&lt; input &gt;、&lt; link &gt;、&lt; meta &gt;</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%F0%9F%93%9D%E6%80%BB%E7%BB%93/" rel="tag"># 📝总结</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/10/24/%E6%80%BB%E7%BB%93%EF%BC%9Avue/" rel="prev" title="总结：vue">
+      <i class="fa fa-chevron-left"></i> 总结：vue
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/10/24/%E6%80%BB%E7%BB%93%EF%BC%9Ajavascript/" rel="next" title="总结：javascript">
+      总结：javascript <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  console.log(`%c                   ####                             K#####           ###W                   #        
+        ##Ef.     ####       f##         #################          ########################        
+        ########################         #################          ########################        
+        ########################         #########L   ####:         ########################        
+        ########################         ###E          ###t         ####       ###.                 
+           ####;  ####  :####            ###E   ####   ###f         #### ###  #########             
+          #####   ####   #####           ###E   ####   ###L         #### ################           
+         .####    ####    ####L          ###E   ####   ###L         ###W #################          
+         ####     ####     ####          ###E   ####   ###f         ###L ######:      ####          
+           #      EEE.     L#            ###E  i###    ###t         ###t ####          ###K         
+          ###################            ###E  ####    ###;         ###  ##################         
+          ####################           ###E  ####    ###          ###  #################W         
+          #########E     j####           ###E ####     ###          ###  #################L         
+          ####             ###           ###E ####     ###          ###  ####          ###t         
+          ####################t          ###E ###W    f###          ###  ####          ####         
+          ####################L          ###f#### ### ####          ###  ##################         
+          ####################L         W###.####,###              t###  ##################         
+          ####             ###i;            #### ####              W###  ##################         
+          #####################;           ##### ####              ####   #.    ####    D           
+          #####################;           ####  ####              ####   ###   ####  :##           
+          #####################           ####   ####              ####  ####   ####  ###E          
+       L  fff                            E####   ####       ##     #### f####   ####  ####          
+       ##########################        ####    ##### f#####f     #### ####    ####   ####         
+       ##########################       ####     .###########      ###L####t #######   ####         
+       ##########################      #####      ###########      ###  ###  ######,    ##E         
+         fGE################EEf          ##        .####E         ####        ####W          `, 'color: #8959a8');
+  console.log('%c 👏👏👏欢迎访问我的博客😊，还请多多指教！', 'color: #8959a8')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E3%80%81HTML-%E8%AF%AD%E4%B9%89%E5%8C%96"><span class="nav-text">一、HTML 语义化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E5%90%AB%E4%B9%89"><span class="nav-text">1、含义</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E4%BC%98%E5%8A%BF"><span class="nav-text">2、优势</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E6%9C%89%E5%93%AA%E4%BA%9B%E8%AF%AD%E4%B9%89%E5%8C%96%E7%9A%84%E6%A0%87%E7%AD%BE"><span class="nav-text">3、有哪些语义化的标签</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8C%E3%80%81HTML5-%E6%96%B0%E6%A0%87%E7%AD%BE"><span class="nav-text">二、HTML5 新标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%89%E3%80%81%E5%B8%B8%E8%A7%81%E6%B5%8F%E8%A7%88%E5%99%A8%E5%8F%8A%E5%85%B6%E5%86%85%E6%A0%B8"><span class="nav-text">三、常见浏览器及其内核</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-lt-script-gt-%E5%92%8C-lt-link-gt-%E6%88%96%E8%80%85%E6%98%AF-src-%E5%92%8C-href-%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">四、 &lt; script &gt;和&lt; link &gt;或者是 src 和 href 的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%94%E3%80%81-lt-head-gt-%E4%B8%AD%E9%83%BD%E6%9C%89%E4%BB%80%E4%B9%88%E5%85%83%E7%B4%A0"><span class="nav-text">五、&lt; head &gt;中都有什么元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81-lt-base-gt"><span class="nav-text">1、&lt; base &gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81-lt-link-gt"><span class="nav-text">2、&lt; link &gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81-lt-script-gt"><span class="nav-text">3、&lt; script &gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4%E3%80%81-lt-meta-gt"><span class="nav-text">4、&lt; meta &gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5%E3%80%81-lt-style-gt"><span class="nav-text">5、&lt; style &gt;</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6%E3%80%81-lt-title-gt"><span class="nav-text">6、&lt; title &gt;</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AD%E3%80%81%E6%9C%AC%E5%9C%B0%E5%AD%98%E5%82%A8"><span class="nav-text">六、本地存储</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%83%E3%80%81websocket"><span class="nav-text">七、websocket</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%AB%E3%80%81W3C-%E6%A0%87%E5%87%86"><span class="nav-text">八、W3C 标准</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1%E3%80%81%E7%BB%93%E6%9E%84%E6%A0%87%E5%87%86%E8%AF%AD%E8%A8%80"><span class="nav-text">1、结构标准语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-1-%E5%8F%AF%E6%89%A9%E5%B1%95%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%88XML%EF%BC%89"><span class="nav-text">1.1 可扩展标记语言（XML）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#1-2-%E5%8F%AF%E6%89%A9%E5%B1%95%E8%B6%85%E6%96%87%E6%9C%AC%E6%A0%87%E8%AE%B0%E8%AF%AD%E8%A8%80%EF%BC%88XHTML%EF%BC%89"><span class="nav-text">1.2 可扩展超文本标记语言（XHTML）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2%E3%80%81%E8%A1%A8%E7%8E%B0%E6%A0%87%E5%87%86%E8%AF%AD%E8%A8%80"><span class="nav-text">2、表现标准语言</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-1-%E5%B1%82%E5%8F%A0%E6%A0%B7%E5%BC%8F%E8%A1%A8%EF%BC%88css%EF%BC%89"><span class="nav-text">2.1 层叠样式表（css）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3%E3%80%81%E8%A1%8C%E4%B8%BA%E6%A0%87%E5%87%86"><span class="nav-text">3、行为标准</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-1-%E6%96%87%E6%A1%A3%E5%AF%B9%E8%B1%A1%E6%A8%A1%E5%9E%8B%EF%BC%88DOM%EF%BC%89"><span class="nav-text">3.1 文档对象模型（DOM）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-2-ECMAScript"><span class="nav-text">3.2 ECMAScript</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B9%9D%E3%80%81img-%E6%A0%87%E7%AD%BE%E4%B8%8A%E7%9A%84-title-%E5%92%8C-alt-%E5%B1%9E%E6%80%A7%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">九、img 标签上的 title 和 alt 属性的区别</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%81%E3%80%81%E7%A9%BA%E5%85%83%E7%B4%A0"><span class="nav-text">十、空元素</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">chajianyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chajianyuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : 'e61e6c0088119178ee8445f575d11370',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

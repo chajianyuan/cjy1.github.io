@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chajianyuan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"ZFO5FC3GGP","apiKey":"ebb197ff3f64dd809727fafc95ab1151","indexName":"test_NAME","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta property="og:type" content="article">
+<meta property="og:title" content="git：学习Git">
+<meta property="og:url" content="https://chajianyuan.github.io/2019/09/09/git%EF%BC%9A%E5%AD%A6%E4%B9%A0Git/index.html">
+<meta property="og:site_name" content="南殇的博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/1631616508997_.pic.jpg?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/1661616730056_.pic.jpg?raw=true">
+<meta property="article:published_time" content="2019-09-09T09:45:23.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:42:56.427Z">
+<meta property="article:author" content="chajianyuan">
+<meta property="article:tag" content="🐱git">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/chajianyuan/picture/blob/master/1631616508997_.pic.jpg?raw=true">
+
+<link rel="canonical" href="https://chajianyuan.github.io/2019/09/09/git%EF%BC%9A%E5%AD%A6%E4%B9%A0Git/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>git：学习Git | 南殇的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="南殇的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">南殇的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Come on, baby 💪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chajianyuan.github.io/2019/09/09/git%EF%BC%9A%E5%AD%A6%E4%B9%A0Git/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="chajianyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南殇的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          git：学习Git
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-09-09 17:45:23" itemprop="dateCreated datePublished" datetime="2019-09-09T17:45:23+08:00">2019-09-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-24 14:42:56" itemprop="dateModified" datetime="2021-08-24T14:42:56+08:00">2021-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.7k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>3 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<img src="https://github.com/chajianyuan/picture/blob/master/1631616508997_.pic.jpg?raw=true" width="600px" />
+
+<a id="more"></a>
+
+<h3 id="一、Git-简介"><a href="#一、Git-简介" class="headerlink" title="一、Git 简介"></a>一、Git 简介</h3><p>Git 是目前世界上最先进的分布式版本控制系统。</p>
+<h3 id="二、集中式和分布式的区别"><a href="#二、集中式和分布式的区别" class="headerlink" title="二、集中式和分布式的区别"></a>二、集中式和分布式的区别</h3><h4 id="1、集中式版本控制系统"><a href="#1、集中式版本控制系统" class="headerlink" title="1、集中式版本控制系统"></a>1、集中式版本控制系统</h4><p>提到集中式版本控制，大家首先想到的就是<code>SVN</code>，集中式版本控制系统中版本库是集中存放在中央服务器上的，而干活的时候，用的是自己的电脑，所以要先从中央服务器拿到最新的版本，然后开始干活，干完活再把自己的活推送到中央服务器，最大的缺点就是必须联网才能工作。</p>
+<h4 id="2、分布式版本控制系统"><a href="#2、分布式版本控制系统" class="headerlink" title="2、分布式版本控制系统"></a>2、分布式版本控制系统</h4><p>每个人的电脑都是一个完整的版本库，这样，你工作的时候就不需要联网了，因为版本库就在自己的电脑上，多人协作时，只需要把各自的修改推送给对方就可以看到对方的修改了。</p>
+<h3 id="二、Git-指令"><a href="#二、Git-指令" class="headerlink" title="二、Git 指令"></a>二、Git 指令</h3><h4 id="1、git-clone-git-server-name-path-reponame-git-从远程克隆"><a href="#1、git-clone-git-server-name-path-reponame-git-从远程克隆" class="headerlink" title="1、git clone git@server-name:path/reponame.git 从远程克隆"></a>1、<code>git clone git@server-name:path/reponame.git</code> 从远程克隆</h4><h4 id="2、git-remote-add-origin-git-server-name-path-reponame-git-关联一个远程仓库"><a href="#2、git-remote-add-origin-git-server-name-path-reponame-git-关联一个远程仓库" class="headerlink" title="2、git remote add origin git@server-name:path/reponame.git 关联一个远程仓库"></a>2、<code>git remote add origin git@server-name:path/reponame.git</code> 关联一个远程仓库</h4><h4 id="3、git-init-初始化一个仓库"><a href="#3、git-init-初始化一个仓库" class="headerlink" title="3、git init 初始化一个仓库"></a>3、<code>git init</code> 初始化一个仓库</h4><p>初始化一个新的git仓库，或者重新初始化已存在的仓库</p>
+<h4 id="4、创建与合并分支"><a href="#4、创建与合并分支" class="headerlink" title="4、创建与合并分支"></a>4、创建与合并分支</h4><p>在每次提交时，Git都将他们串成一条时间线，这条时间线只有一条叫做主分支（master），HEAD 指向当前分支</p>
+<p>1）创建 dev 分支，并切换到 dev 分支</p>
+<p><code>git checkout -b dev</code> 或者<code>git switch -c dev</code></p>
+<p>等同于</p>
+<figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch <span class="built_in">dev</span></span><br><span class="line">git checkout <span class="built_in">dev</span> 或者 git switch <span class="built_in">dev</span></span><br></pre></td></tr></table></figure>
+
+<p>2）查看当前分支<code>git branch</code></p>
+<p>3）将 dev 分支合并到 master<code>git merge dev</code></p>
+<blockquote>
+<p><strong>PS: merge和rebase有什么区别❓</strong></p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">dev</span>                 <span class="comment">✅</span> -- <span class="comment">✅</span> </span><br><span class="line">                  <span class="comment">/</span>                </span><br><span class="line">                 <span class="comment">/</span>                </span><br><span class="line">                <span class="comment">/</span>               </span><br><span class="line"><span class="comment">matser</span>  <span class="comment">⭕️</span> -- <span class="comment">⭕️</span> -- <span class="comment">⭕</span> --<span class="comment">️️</span> <span class="comment">⭕</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>merge<ul>
+<li>特点：会自动创建一个新的commit</li>
+<li>优点：真实记录commit</li>
+<li>缺点：commit繁杂</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">dev                 ✅ -- ✅ -- ✅（多了一次合并的commit）</span><br><span class="line">                  <span class="regexp">/           /</span></span><br><span class="line">                 <span class="regexp">/           /</span></span><br><span class="line">                <span class="regexp">/           /</span></span><br><span class="line">matser  ⭕️ -- ⭕️ -- ⭕ --️️ ⭕ </span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>rebase<ul>
+<li>特点：合并之前的commit地址</li>
+<li>优点：得到更简洁的commit历史</li>
+<li>缺点：如果合并代码时出现了问题，不容易定位，因为重写了commit history<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">dev</span>                <span class="comment">⭕</span> -- <span class="comment">⭕️️</span> -- <span class="comment">✅</span> -- <span class="comment">✅</span> </span><br><span class="line">                 <span class="comment">/</span>                </span><br><span class="line">                <span class="comment">/</span>                </span><br><span class="line">               <span class="comment">/</span>               </span><br><span class="line"><span class="comment">matser</span>  <span class="comment">⭕️</span> -- <span class="comment">⭕️</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+</blockquote>
+<h4 id="5、添加文件到-Git-本地仓库"><a href="#5、添加文件到-Git-本地仓库" class="headerlink" title="5、添加文件到 Git 本地仓库"></a>5、添加文件到 Git 本地仓库</h4><p>1）使用<code>git add &lt;file&gt;</code> ，注意，可以反复多次使用，添加多个文件（放到暂存区）；</p>
+<p>2）使用<code>git commit -m &lt;message&gt;</code> 提交到本地仓库（放到工作区）。</p>
+<p><strong>注意：</strong> &lt; message &gt;存在规范，不能随便写，例如修改了哪个文件或者新增了哪个文件</p>
+<p><code>commit message格式</code></p>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">type</span>&gt;(scope): &lt;subject&gt;</span><br></pre></td></tr></table></figure>
+<p><strong>type(必须)：用于识别<code>git commit</code>的类别</strong></p>
+<ul>
+<li>feat: 新功能</li>
+<li>fix/to: 修复bug<ul>
+<li>fix: 适合于一次提交直接修复问题</li>
+<li>to: 适合于多次提交。最终修复问题提交时使用fix</li>
+</ul>
+</li>
+<li>docs: 文档</li>
+<li>style: 格式（不影响代码运行的变动）</li>
+<li>refactor: 重构（既不是新增功能，也不是修复bug）</li>
+<li>perf: 优化相关，比如提升性能、体验</li>
+<li>test: 增加测试</li>
+<li>chore: 构建过程或辅助工具的变动</li>
+<li>revert: 回滚到上一个版本</li>
+<li>merge: 代码合并</li>
+<li>sync: 同步主线或分支的bug</li>
+</ul>
+<p><strong>scope(可选)：用于说明commit影响的范围</strong></p>
+<p><strong>subject(必须)：<code>commit</code>目的的简短描述</strong></p>
+<h4 id="6、git-push-u-origin-lt-name-gt-推送到远程-master-分支"><a href="#6、git-push-u-origin-lt-name-gt-推送到远程-master-分支" class="headerlink" title="6、git push -u origin &lt;name&gt; 推送到远程 master 分支"></a>6、<code>git push -u origin &lt;name&gt;</code> 推送到远程 master 分支</h4><p>如果远程仓库没有对应的分支，则使用<code>git push --set-upstream origin &lt;name&gt;</code>创建远程分支</p>
+<h4 id="7、git-pull-u-origin-lt-name-gt-将最新的提交拉取下来"><a href="#7、git-pull-u-origin-lt-name-gt-将最新的提交拉取下来" class="headerlink" title="7、git pull -u origin &lt;name&gt; 将最新的提交拉取下来"></a>7、<code>git pull -u origin &lt;name&gt;</code> 将最新的提交拉取下来</h4><h4 id="8、git-status查看工作区的状态"><a href="#8、git-status查看工作区的状态" class="headerlink" title="8、git status查看工作区的状态"></a>8、<code>git status</code>查看工作区的状态</h4><p>可以查看本地未提交的代码中，修改了哪些文件。</p>
+<h4 id="9、git-diff-lt-file-gt-查看具体修改了什么内容"><a href="#9、git-diff-lt-file-gt-查看具体修改了什么内容" class="headerlink" title="9、git diff &lt;file&gt; 查看具体修改了什么内容"></a>9、<code>git diff &lt;file&gt;</code> 查看具体修改了什么内容</h4><p>执行<code>git diff</code>可以查看所有具体修改，也可以指定查看具体的文件修改</p>
+<h4 id="10、git-log-pretty-oneline-查看历史记录"><a href="#10、git-log-pretty-oneline-查看历史记录" class="headerlink" title="10、git log --pretty=oneline 查看历史记录"></a>10、<code>git log --pretty=oneline</code> 查看历史记录</h4><h4 id="11、版本回退"><a href="#11、版本回退" class="headerlink" title="11、版本回退"></a>11、版本回退</h4><ol>
+<li><code>git reset --hard commit_id</code></li>
+</ol>
+<p><strong>场景</strong>：如果想撤销之前的某个版本，但是又想保留该目标版本之后的版本，记录下整个版本变动流程</p>
+<p><code>HEAD</code> 表示当前版本，上一个版本<code>HEAD^</code> ，上上个版本<code>HEAD^^</code> ，以此类推，往上 100 个版本是<code>HEAD~100</code></p>
+<p><strong>具体操作</strong>：</p>
+<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span>. git <span class="built_in">log</span> 查看版本号</span><br><span class="line"><span class="number">2</span>. git <span class="built_in">reset</span> --hard 目标版本</span><br><span class="line"><span class="number">3</span>. git <span class="built_in">push</span> -f <span class="built_in">origin</span> 分支名</span><br></pre></td></tr></table></figure>
+
+<!--穿梭前，用`git log` 查看提交历史，以便确定要回退到哪个版本。-->
+
+<!--重返未来，用`git reflog` 查看历史命令，以便确定要回到未来的哪个版本。-->
+
+<p>2） <code>git revert（反做）</code></p>
+<p><strong>场景</strong>：如果想恢复到之前某个提交的版本，并且那个版本之后的提交都不要了</p>
+<p><strong>具体操作</strong>：</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git log 查看版本号</span><br><span class="line"><span class="number">2.</span> git revert -n 版本号</span><br><span class="line"><span class="number">3.</span> git commit -m <span class="string">&quot;版本名&quot;</span></span><br><span class="line"><span class="number">4.</span> git push</span><br></pre></td></tr></table></figure>
+
+<h4 id="12、git-checkout-file-丢弃工作区的修改"><a href="#12、git-checkout-file-丢弃工作区的修改" class="headerlink" title="12、git checkout -- file 丢弃工作区的修改"></a>12、<code>git checkout -- file</code> 丢弃工作区的修改</h4><p>1）文件自修改后还没有放到暂存区，现在撤销修改就回到和版本库一模一样的状态；</p>
+<p>2）文件已经添加到暂存区后，又做了修改，现在撤销修改就回到添加到暂存区后的状态。</p>
+<h4 id="13、删除文件"><a href="#13、删除文件" class="headerlink" title="13、删除文件"></a>13、删除文件</h4><p>本地文件管理器删除文件<code>rm file</code> 后，使用<code>git status</code>可以 查询哪些文件被删除了：</p>
+<p>1）如果确定要删除,使用<code>git rm file</code> ，并且<code>git commit</code></p>
+<p>2）如果误删，则恢复删除的文件<code>git checkout -- file</code></p>
+<h4 id="14、git-log-graph-查看分支合并图"><a href="#14、git-log-graph-查看分支合并图" class="headerlink" title="14、git log --graph 查看分支合并图"></a>14、<code>git log --graph</code> 查看分支合并图</h4><h4 id="15、bug-分支"><a href="#15、bug-分支" class="headerlink" title="15、bug 分支"></a>15、bug 分支</h4><p>例如，你正在 dev 分支上进行工作到一半，突然接到要修复一个代号 101 的 bug 任务</p>
+<p>1）把当前工作现场储藏起来<code>git stash</code> ；</p>
+<p>2）创建分支修复 bug，修复完之后 commit。切换到 master 分支完成合并，最后删除新创建的 bug 分支；</p>
+<p>3）恢复未做完的 dev 工作现场</p>
+<p>​ 使用<code>git stash list</code> 查看工作现场</p>
+<p>​ （a）用<code>git stash apply</code> ，然后使用<code>git stash drop</code> 删除 stash 内容。使用<code>git stash apply stash@&#123;0&#125;</code> 恢复指定的 stash;</p>
+<p>​ （b）使用<code>git stash pop</code> 恢复的同时能把 stash 内容也删除了。</p>
+<p>在 master 分支上修复 bug，想要合并到当前的 dev 分支，可以使用<code>git cherry-pick &lt;commit&gt;</code> ,把 bug 提交的修改复制到当前分支，避免重复劳动。</p>
+<h4 id="16、-删除分支"><a href="#16、-删除分支" class="headerlink" title="16、 删除分支"></a>16、 删除分支</h4><ul>
+<li><p>删除本地分支：<code>git branch -D &lt;name&gt;</code> </p>
+</li>
+<li><p>删除远程分支： <code>git push origin -d &lt;name&gt;</code> </p>
+</li>
+<li><p>删除包含fix的所有分支：<code>git branch | grep &#39;fix*&#39; | xargs git branch -d</code></p>
+</li>
+<li><p>删除当前分支以外的其他所有分支：<code>git branch | xargs git branch -d</code></p>
+</li>
+</ul>
+<blockquote>
+<p><span class="emoji" alias="loudspeaker" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4e2.png?v8">&#x1f4e2;</span> 删除分支时需要切换到除被删除分支之外的分支</p>
+</blockquote>
+<blockquote>
+<p>解释一下👇<br>|: 管道命令，用于将一串命令串联起来。前面命令的输出可以作为后面命令的输入<br>grep: 搜索过滤命令，使用正则表达式<br>xargs: 参数传递命令，用于将标准输入作为命令的参数传给下一个命令</p>
+</blockquote>
+<h4 id="17、查看远程仓库的信息用git-remote-或git-remote-v"><a href="#17、查看远程仓库的信息用git-remote-或git-remote-v" class="headerlink" title="17、查看远程仓库的信息用git remote 或git remote -v"></a>17、查看远程仓库的信息用<code>git remote</code> 或<code>git remote -v</code></h4><h4 id="18、git-tag-lt-name-gt-打标签"><a href="#18、git-tag-lt-name-gt-打标签" class="headerlink" title="18、git tag &lt;name&gt; 打标签"></a>18、<code>git tag &lt;name&gt;</code> 打标签</h4><p>为什么要打标签？四个字：<strong>以示重要</strong>，比如说使用tag标记发布节点（v1.0、v2.0等）</p>
+<p>1）切换到需要打标签的分支上</p>
+<figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">git</span> <span class="string">branch</span></span><br><span class="line"><span class="attr">git</span> <span class="string">checkout &lt;tagname&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>2）打标签<code>git tag &lt;tagname&gt;</code></p>
+<p>3）查看所有标签<code>git tag</code></p>
+<p>4）查看指定标签信息<code>git show &lt;tagname&gt;</code></p>
+<p>5）删除标签 <code>git tag -d &lt;tagname&gt;</code></p>
+<p>6）推送一个本地标签<code>git push origin &lt;tagname&gt;</code></p>
+<p>7）推送全部未推送过的本地标签<code>git push origin --tags</code></p>
+<p>8）删除一个远程标签<code>git push origin :refs/tags/&lt;tagname&gt;</code></p>
+<h4 id="19、git-bisect-查找哪一次代码提交引入了错误"><a href="#19、git-bisect-查找哪一次代码提交引入了错误" class="headerlink" title="19、git bisect 查找哪一次代码提交引入了错误"></a>19、<code>git bisect</code> 查找哪一次代码提交引入了错误</h4><p><strong>原理</strong>：二分法</p>
+<p>举个栗子：一共有101次提交</p>
+<p><strong>使用流程</strong>：</p>
+<p> 1） 检查代码提交记录 <code>git log --pretty=oneline</code></p>
+<p> 2） 启动查错 <code>git bisect start [终点commit] [起点commit]</code></p>
+<p>终点是最近一次的提交，起点是更久之前的提交</p>
+<figure class="highlight pgsql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git bisect <span class="keyword">start</span> [第<span class="number">101</span>次<span class="keyword">commit</span>] [第<span class="number">1</span>次<span class="keyword">commit</span>]</span><br></pre></td></tr></table></figure>
+
+<p>执行上述命令完之后，代码库会切换到上述范围正中间的那一次提交(也就是第51次提交)</p>
+<p> 3）此时运行代码，如果代码运行正常，则使用<code>git bisect good</code>标记本次提交是没有问题的，此时代码会自动切换到后半段中点的版本（也就是第76次提交）</p>
+<p> 4） 继续运行代码，如果代码运行不正常了，则使用<code>git bisect bad</code>标记本次提交是有问题的，此时代码会自动切换到本次提交到上一次提交的中点（也就是第63次提交）</p>
+<p> 5） 不断重复上述第3、4步骤，就能找到出问题的那次提交<br> <img src="https://github.com/chajianyuan/picture/blob/master/1661616730056_.pic.jpg?raw=true"></p>
+<p> 6） 退出查错，回到最近一次提交<code>git bisect reset</code></p>
+<blockquote>
+<ul>
+<li>参照 <a target="_blank" rel="noopener" href="https://mp.weixin.qq.com/s/vzgST0ko-HZVkFFiSZ2xGg">如何规范你的Git commit</a></li>
+<li>参照 <a target="_blank" rel="noopener" href="http://www.ruanyifeng.com/blog/2018/12/git-bisect.html">git bisect 命令教程</a></li>
+</ul>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%F0%9F%90%B1git/" rel="tag"># 🐱git</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/09/03/webpack%EF%BC%9Awebpack%E5%AD%A6%E4%B9%A0%E4%B9%8B%E6%97%85/" rel="prev" title="webpack：webpack学习之旅">
+      <i class="fa fa-chevron-left"></i> webpack：webpack学习之旅
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/09/20/%E6%80%BB%E7%BB%93%EF%BC%9A%E7%AE%97%E6%B3%95/" rel="next" title="总结：算法">
+      总结：算法 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  console.log(`%c                   ####                             K#####           ###W                   #        
+        ##Ef.     ####       f##         #################          ########################        
+        ########################         #################          ########################        
+        ########################         #########L   ####:         ########################        
+        ########################         ###E          ###t         ####       ###.                 
+           ####;  ####  :####            ###E   ####   ###f         #### ###  #########             
+          #####   ####   #####           ###E   ####   ###L         #### ################           
+         .####    ####    ####L          ###E   ####   ###L         ###W #################          
+         ####     ####     ####          ###E   ####   ###f         ###L ######:      ####          
+           #      EEE.     L#            ###E  i###    ###t         ###t ####          ###K         
+          ###################            ###E  ####    ###;         ###  ##################         
+          ####################           ###E  ####    ###          ###  #################W         
+          #########E     j####           ###E ####     ###          ###  #################L         
+          ####             ###           ###E ####     ###          ###  ####          ###t         
+          ####################t          ###E ###W    f###          ###  ####          ####         
+          ####################L          ###f#### ### ####          ###  ##################         
+          ####################L         W###.####,###              t###  ##################         
+          ####             ###i;            #### ####              W###  ##################         
+          #####################;           ##### ####              ####   #.    ####    D           
+          #####################;           ####  ####              ####   ###   ####  :##           
+          #####################           ####   ####              ####  ####   ####  ###E          
+       L  fff                            E####   ####       ##     #### f####   ####  ####          
+       ##########################        ####    ##### f#####f     #### ####    ####   ####         
+       ##########################       ####     .###########      ###L####t #######   ####         
+       ##########################      #####      ###########      ###  ###  ######,    ##E         
+         fGE################EEf          ##        .####E         ####        ####W          `, 'color: #8959a8');
+  console.log('%c 👏👏👏欢迎访问我的博客😊，还请多多指教！', 'color: #8959a8')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81Git-%E7%AE%80%E4%BB%8B"><span class="nav-text">一、Git 简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81%E9%9B%86%E4%B8%AD%E5%BC%8F%E5%92%8C%E5%88%86%E5%B8%83%E5%BC%8F%E7%9A%84%E5%8C%BA%E5%88%AB"><span class="nav-text">二、集中式和分布式的区别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81%E9%9B%86%E4%B8%AD%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">1、集中式版本控制系统</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81%E5%88%86%E5%B8%83%E5%BC%8F%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E7%B3%BB%E7%BB%9F"><span class="nav-text">2、分布式版本控制系统</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81Git-%E6%8C%87%E4%BB%A4"><span class="nav-text">二、Git 指令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1%E3%80%81git-clone-git-server-name-path-reponame-git-%E4%BB%8E%E8%BF%9C%E7%A8%8B%E5%85%8B%E9%9A%86"><span class="nav-text">1、git clone git@server-name:path&#x2F;reponame.git 从远程克隆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2%E3%80%81git-remote-add-origin-git-server-name-path-reponame-git-%E5%85%B3%E8%81%94%E4%B8%80%E4%B8%AA%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93"><span class="nav-text">2、git remote add origin git@server-name:path&#x2F;reponame.git 关联一个远程仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3%E3%80%81git-init-%E5%88%9D%E5%A7%8B%E5%8C%96%E4%B8%80%E4%B8%AA%E4%BB%93%E5%BA%93"><span class="nav-text">3、git init 初始化一个仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4%E3%80%81%E5%88%9B%E5%BB%BA%E4%B8%8E%E5%90%88%E5%B9%B6%E5%88%86%E6%94%AF"><span class="nav-text">4、创建与合并分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5%E3%80%81%E6%B7%BB%E5%8A%A0%E6%96%87%E4%BB%B6%E5%88%B0-Git-%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93"><span class="nav-text">5、添加文件到 Git 本地仓库</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6%E3%80%81git-push-u-origin-lt-name-gt-%E6%8E%A8%E9%80%81%E5%88%B0%E8%BF%9C%E7%A8%8B-master-%E5%88%86%E6%94%AF"><span class="nav-text">6、git push -u origin &lt;name&gt; 推送到远程 master 分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7%E3%80%81git-pull-u-origin-lt-name-gt-%E5%B0%86%E6%9C%80%E6%96%B0%E7%9A%84%E6%8F%90%E4%BA%A4%E6%8B%89%E5%8F%96%E4%B8%8B%E6%9D%A5"><span class="nav-text">7、git pull -u origin &lt;name&gt; 将最新的提交拉取下来</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8%E3%80%81git-status%E6%9F%A5%E7%9C%8B%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E7%8A%B6%E6%80%81"><span class="nav-text">8、git status查看工作区的状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#9%E3%80%81git-diff-lt-file-gt-%E6%9F%A5%E7%9C%8B%E5%85%B7%E4%BD%93%E4%BF%AE%E6%94%B9%E4%BA%86%E4%BB%80%E4%B9%88%E5%86%85%E5%AE%B9"><span class="nav-text">9、git diff &lt;file&gt; 查看具体修改了什么内容</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#10%E3%80%81git-log-pretty-oneline-%E6%9F%A5%E7%9C%8B%E5%8E%86%E5%8F%B2%E8%AE%B0%E5%BD%95"><span class="nav-text">10、git log --pretty&#x3D;oneline 查看历史记录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#11%E3%80%81%E7%89%88%E6%9C%AC%E5%9B%9E%E9%80%80"><span class="nav-text">11、版本回退</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#12%E3%80%81git-checkout-file-%E4%B8%A2%E5%BC%83%E5%B7%A5%E4%BD%9C%E5%8C%BA%E7%9A%84%E4%BF%AE%E6%94%B9"><span class="nav-text">12、git checkout -- file 丢弃工作区的修改</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#13%E3%80%81%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"><span class="nav-text">13、删除文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#14%E3%80%81git-log-graph-%E6%9F%A5%E7%9C%8B%E5%88%86%E6%94%AF%E5%90%88%E5%B9%B6%E5%9B%BE"><span class="nav-text">14、git log --graph 查看分支合并图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#15%E3%80%81bug-%E5%88%86%E6%94%AF"><span class="nav-text">15、bug 分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#16%E3%80%81-%E5%88%A0%E9%99%A4%E5%88%86%E6%94%AF"><span class="nav-text">16、 删除分支</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#17%E3%80%81%E6%9F%A5%E7%9C%8B%E8%BF%9C%E7%A8%8B%E4%BB%93%E5%BA%93%E7%9A%84%E4%BF%A1%E6%81%AF%E7%94%A8git-remote-%E6%88%96git-remote-v"><span class="nav-text">17、查看远程仓库的信息用git remote 或git remote -v</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#18%E3%80%81git-tag-lt-name-gt-%E6%89%93%E6%A0%87%E7%AD%BE"><span class="nav-text">18、git tag &lt;name&gt; 打标签</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#19%E3%80%81git-bisect-%E6%9F%A5%E6%89%BE%E5%93%AA%E4%B8%80%E6%AC%A1%E4%BB%A3%E7%A0%81%E6%8F%90%E4%BA%A4%E5%BC%95%E5%85%A5%E4%BA%86%E9%94%99%E8%AF%AF"><span class="nav-text">19、git bisect 查找哪一次代码提交引入了错误</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">chajianyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chajianyuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : '075da2f875c2f6fcc40705babb11a0f1',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>

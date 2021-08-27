@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.2.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"chajianyuan.github.io","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"appID":"ZFO5FC3GGP","apiKey":"ebb197ff3f64dd809727fafc95ab1151","indexName":"test_NAME","hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="一、&amp;#x1f4d5; 配置 github1、首先注册、登录github.com 2、在右上角选择New repository  在网页上输入 你的名字.github.io 显示正常，则新建成功">
+<meta property="og:type" content="article">
+<meta property="og:title" content="其他：使用hexo搭建博客">
+<meta property="og:url" content="https://chajianyuan.github.io/2019/03/16/%E5%85%B6%E4%BB%96%EF%BC%9A%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="南殇的博客">
+<meta property="og:description" content="一、&amp;#x1f4d5; 配置 github1、首先注册、登录github.com 2、在右上角选择New repository  在网页上输入 你的名字.github.io 显示正常，则新建成功">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316103736.png?raw=true">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316104850.png">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316105545.png">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316110343.png">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111949.png">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111234.png">
+<meta property="og:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111314.png">
+<meta property="article:published_time" content="2019-03-16T01:22:03.000Z">
+<meta property="article:modified_time" content="2021-08-24T06:34:09.326Z">
+<meta property="article:author" content="chajianyuan">
+<meta property="article:tag" content="🎀其他">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316103736.png?raw=true">
+
+<link rel="canonical" href="https://chajianyuan.github.io/2019/03/16/%E5%85%B6%E4%BB%96%EF%BC%9A%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>其他：使用hexo搭建博客 | 南殇的博客</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="南殇的博客" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">南殇的博客</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Come on, baby 💪</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://chajianyuan.github.io/2019/03/16/%E5%85%B6%E4%BB%96%EF%BC%9A%E4%BD%BF%E7%94%A8hexo%E6%90%AD%E5%BB%BA%E5%8D%9A%E5%AE%A2/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="chajianyuan">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="南殇的博客">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          其他：使用hexo搭建博客
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2019-03-16 09:22:03" itemprop="dateCreated datePublished" datetime="2019-03-16T09:22:03+08:00">2019-03-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2021-08-24 14:34:09" itemprop="dateModified" datetime="2021-08-24T14:34:09+08:00">2021-08-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%8A%80%E6%9C%AF/" itemprop="url" rel="index"><span itemprop="name">技术</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.1k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer"/>
+
+<h3 id="一、-x1f4d5-配置-github"><a href="#一、-x1f4d5-配置-github" class="headerlink" title="一、&#x1f4d5; 配置 github"></a>一、<span class="emoji" alias="closed_book" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d5.png?v8">&#x1f4d5;</span> 配置 github</h3><p>1、首先注册、登录<a target="_blank" rel="noopener" href="https://github.com/">github.com</a></p>
+<p>2、在右上角选择<a target="_blank" rel="noopener" href="https://github.com/new">New repository</a></p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316103736.png?raw=true"></p>
+<p>在网页上输入 你的名字.github.io 显示正常，则新建成功</p>
+<a id="more"></a>
+
+<h3 id="二、-x1f4d7-环境安装（node、git）"><a href="#二、-x1f4d7-环境安装（node、git）" class="headerlink" title="二、&#x1f4d7;  环境安装（node、git）"></a>二、<span class="emoji" alias="green_book" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d7.png?v8">&#x1f4d7;</span>  环境安装（node、git）</h3><p>1、安装<a target="_blank" rel="noopener" href="https://nodejs.org/en/">node.js</a></p>
+<p>2、安装 git<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/">廖雪峰老师的安装教程</a></p>
+<p>安装完成后，在开始菜单找到”Git”-&gt;”Git Bash”，名称都是 github 上面的</p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316104850.png"></p>
+<p>3、安装 Hexo</p>
+<p><code>npm install -g hexo-cli</code></p>
+<p><a target="_blank" rel="noopener" href="http://note.youdao.com/noteshare?id=1844b19b5f12367edd3460b6cf88d126">安装 cmder 流程</a></p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316105545.png"></p>
+<h3 id="三、-x1f4d8-设置"><a href="#三、-x1f4d8-设置" class="headerlink" title="三、&#x1f4d8; 设置"></a>三、<span class="emoji" alias="blue_book" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d8.png?v8">&#x1f4d8;</span> 设置</h3><p>1、在合适的文件夹下新建文件夹 test,进入 test,右击选择 Cmder Here</p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316110343.png"></p>
+<p>2、在窗口输入<code>hexo init blog</code></p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111949.png"></p>
+<p>3、成功后提示<code>INFO Start blogging with Hexo!</code></p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111234.png"></p>
+<p>4、访问 localhost:4000/，就可以访问初步的博客模样</p>
+<p><img src="https://github.com/chajianyuan/picture/blob/master/TIM%E5%9B%BE%E7%89%8720190316111314.png"></p>
+<p>5、重新打开 cmd 输入</p>
+<p><code>ssh-keygen -t rsa -C &quot;Github注册的邮箱地址&quot;</code></p>
+<p>一路 enter 得到信息</p>
+<p><code>Your public key has been saved in /c/Users/user/.ssh/id_rsa.pub.</code></p>
+<p>找到该文件将里面的内容复制到<a target="_blank" rel="noopener" href="https://github.com/settings/keys">Github</a></p>
+<p>New SSH key ——Title：blog —— Key：输入刚才复制的—— Add SSH key</p>
+<h3 id="四、-x1f4d9-配置博客"><a href="#四、-x1f4d9-配置博客" class="headerlink" title="四、&#x1f4d9; 配置博客"></a>四、<span class="emoji" alias="orange_book" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d9.png?v8">&#x1f4d9;</span> 配置博客</h3><p>在 blog 目录下修改以下参数信息</p>
+<p>网站的相关信息</p>
+<figure class="highlight avrasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="symbol">title:</span> <span class="meta">#标题</span></span><br><span class="line"><span class="symbol">subtitle:</span> <span class="meta">#副标题</span></span><br><span class="line"><span class="symbol">description:</span>  <span class="meta">#站点描述，给搜索引擎看</span></span><br><span class="line"><span class="symbol">author:</span> <span class="meta">#作者</span></span><br><span class="line"><span class="symbol">language:</span> <span class="built_in">zh</span>-CN <span class="meta">#语言</span></span><br><span class="line"><span class="symbol">timezone:</span>  Asia/Shanghai <span class="meta">#</span></span><br></pre></td></tr></table></figure>
+
+<p>配置部署</p>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">deploy:</span> <span class="meta">#</span></span><br><span class="line"><span class="symbol">  type:</span> git <span class="meta">#</span></span><br><span class="line"><span class="symbol">  repo:</span> <span class="meta"># github地址</span></span><br><span class="line"><span class="symbol">  branch:</span> master</span><br></pre></td></tr></table></figure>
+
+<h3 id="五、-x1f4d3-发表文章"><a href="#五、-x1f4d3-发表文章" class="headerlink" title="五、&#x1f4d3; 发表文章"></a>五、<span class="emoji" alias="notebook" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f4d3.png?v8">&#x1f4d3;</span> 发表文章</h3><p>在 cmd 中输入</p>
+<figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo <span class="keyword">new</span> <span class="string">&quot;测试文章&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>在给定的位置打开该文件，用 markdown 语法编辑</p>
+<p>然后保存</p>
+<p><code>hexo clean</code> #清除缓存，网页正常情况下可以忽略此条命令</p>
+<p><code>hexo generate</code> #生成</p>
+<p><code>hexo server</code> #启动服务预览</p>
+<p>最后发布到网上执行<code>hexo deploy</code> #部署发布</p>
+<p>在网页上输入 你的名字.github.io 就可以看到已经发布的博客</p>
+<h3 id="六、-x1f41b-bug-fix"><a href="#六、-x1f41b-bug-fix" class="headerlink" title="六、&#x1f41b; bug fix"></a>六、<span class="emoji" alias="bug" style="" fallback-src="https://github.githubassets.com/images/icons/emoji/unicode/1f41b.png?v8">&#x1f41b;</span> bug fix</h3><p>1、如果在执行 hexo deploy 后,出现 error deployer not found:github 的错误，执行：</p>
+<p><code>npm install hexo-deployer-git --save</code></p>
+<p>2、如果部署后出现 404，查看 github 数据源是否在 master 分支下</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%F0%9F%8E%80%E5%85%B6%E4%BB%96/" rel="tag"># 🎀其他</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2019/03/27/%E7%AE%97%E6%B3%95%EF%BC%9A107%E3%80%81%E4%BA%8C%E5%8F%89%E6%A0%91%E7%9A%84%E5%B1%82%E6%AC%A1%E9%81%8D%E5%8E%86II%EF%BC%88Javascript%EF%BC%89%E2%80%9D/" rel="next" title="算法：107、二叉树的层次遍历II（Javascript）">
+      算法：107、二叉树的层次遍历II（Javascript） <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  console.log(`%c                   ####                             K#####           ###W                   #        
+        ##Ef.     ####       f##         #################          ########################        
+        ########################         #################          ########################        
+        ########################         #########L   ####:         ########################        
+        ########################         ###E          ###t         ####       ###.                 
+           ####;  ####  :####            ###E   ####   ###f         #### ###  #########             
+          #####   ####   #####           ###E   ####   ###L         #### ################           
+         .####    ####    ####L          ###E   ####   ###L         ###W #################          
+         ####     ####     ####          ###E   ####   ###f         ###L ######:      ####          
+           #      EEE.     L#            ###E  i###    ###t         ###t ####          ###K         
+          ###################            ###E  ####    ###;         ###  ##################         
+          ####################           ###E  ####    ###          ###  #################W         
+          #########E     j####           ###E ####     ###          ###  #################L         
+          ####             ###           ###E ####     ###          ###  ####          ###t         
+          ####################t          ###E ###W    f###          ###  ####          ####         
+          ####################L          ###f#### ### ####          ###  ##################         
+          ####################L         W###.####,###              t###  ##################         
+          ####             ###i;            #### ####              W###  ##################         
+          #####################;           ##### ####              ####   #.    ####    D           
+          #####################;           ####  ####              ####   ###   ####  :##           
+          #####################           ####   ####              ####  ####   ####  ###E          
+       L  fff                            E####   ####       ##     #### f####   ####  ####          
+       ##########################        ####    ##### f#####f     #### ####    ####   ####         
+       ##########################       ####     .###########      ###L####t #######   ####         
+       ##########################      #####      ###########      ###  ###  ######,    ##E         
+         fGE################EEf          ##        .####E         ####        ####W          `, 'color: #8959a8');
+  console.log('%c 👏👏👏欢迎访问我的博客😊，还请多多指教！', 'color: #8959a8')
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80%E3%80%81-x1f4d5-%E9%85%8D%E7%BD%AE-github"><span class="nav-text">一、&amp;#x1f4d5; 配置 github</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C%E3%80%81-x1f4d7-%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85%EF%BC%88node%E3%80%81git%EF%BC%89"><span class="nav-text">二、&amp;#x1f4d7;  环境安装（node、git）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89%E3%80%81-x1f4d8-%E8%AE%BE%E7%BD%AE"><span class="nav-text">三、&amp;#x1f4d8; 设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B%E3%80%81-x1f4d9-%E9%85%8D%E7%BD%AE%E5%8D%9A%E5%AE%A2"><span class="nav-text">四、&amp;#x1f4d9; 配置博客</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94%E3%80%81-x1f4d3-%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0"><span class="nav-text">五、&amp;#x1f4d3; 发表文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD%E3%80%81-x1f41b-bug-fix"><span class="nav-text">六、&amp;#x1f41b; bug fix</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">chajianyuan</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">93</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">20</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">chajianyuan</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+      <span class="post-meta-item-text">站点总字数：</span>
+    <span title="站点总字数">163k</span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+      <span class="post-meta-item-text">站点阅读时长 &asymp;</span>
+    <span title="站点阅读时长">2:28</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '',
+      clientSecret: '',
+      repo        : '',
+      owner       : '',
+      admin       : [''],
+      id          : '647cba09c4d95759f4e783d17ae42343',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+</body>
+</html>
